@@ -1,6 +1,6 @@
 {
   "name": "ssp-preprocessor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple generic preprocessor implementation.",
   "main": "preprocessor.js",
   "scripts": {
