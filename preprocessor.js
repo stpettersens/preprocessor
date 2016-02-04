@@ -23,7 +23,7 @@ function preprocessor(input, conditions) {
 		// Process prefix...
 		var m = input[i].match(/#prefix (.*) with (.*)/);
 		if(m !== null) {
-			prefixed.push(m[1]);
+			prefixed.push(m[1] + ':' + cond);
 			prefixes.push(m[2]);
 			continue;
 		}
@@ -43,22 +43,27 @@ function preprocessor(input, conditions) {
 		// Push relevant LoC to array...
 		conditions.map(function(sc) {
 			if(in_pp && cond == sc) {
-				preprocessed.push(input[i]);
+				preprocessed.push(input[i] + '||in_pp');
 			}
 		});
 		if(!in_pp) {
-			preprocessed.push(input[i]);
+			preprocessed.push(input[i] + '||out_pp');
 			continue;
 		}
 	}
 	preprocessed = preprocessed.map(function(l) {
-		var pl = l;
+		var pl = l.split('||');
 		var i = 0;
 		prefixed.map(function(p) {
-			pl = pl.replace(p, prefixes[i] + p);
+			var pc = p.split(':');
+			conditions.map(function(sc) {
+				if(pc[1] == sc && pl[1] == 'in_pp') {
+					pl[0] = pl[0].replace(pc[0], prefixes[i] + pc[0]);
+				}
+			});
 			i++;
 		});
-		return pl;
+		return pl[0];
 	});
 	
 	return preprocessed;
