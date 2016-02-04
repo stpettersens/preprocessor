@@ -1,2 +1,2 @@
 #### Preprocessor
-> Generic preprocessor as an npm module.
+> Generic preprocessor as a CommonJS (e.g. node) module.

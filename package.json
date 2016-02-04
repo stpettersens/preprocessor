@@ -1,0 +1,26 @@
+{
+  "name": "ssp-preprocessor",
+  "version": "0.0.1",
+  "description": "A simple generic preprocessor implementation.",
+  "main": "preprocessor.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stpettersens/preprocessor.git"
+  },
+  "keywords": [
+    "simple",
+    "preprocessor",
+    "module",
+    "commonjs",
+    "node"
+  ],
+  "author": "Sam Saint-Pettersen <s.stpettersen+github@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stpettersens/preprocessor/issues"
+  },
+  "homepage": "https://github.com/stpettersens/preprocessor#readme"
+}
