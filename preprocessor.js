@@ -57,7 +57,7 @@ function preprocessor(input, conditions) {
 		prefixed.map(function(p) {
 			var pc = p.split(':');
 			conditions.map(function(sc) {
-				if(pc[1] == sc && pl[1] == 'in_pp') {
+				if(pc[1] == sc) { // && pl[1] == 'in_pp') {
 					pl[0] = pl[0].replace(pc[0], prefixes[i] + pc[0]);
 				}
 			});
