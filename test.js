@@ -5,7 +5,7 @@ const loc_in = [
 	'// #prefix foo with super',
 	'I am foo.',
 	'// #elseif BAR',
-	'// #prefix bar with super',
+	'// #prefix bar with ultra',
 	'I am bar.',
 	'// #fi',
 	'I am here for foo and bar.'
